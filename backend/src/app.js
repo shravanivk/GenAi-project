@@ -14,7 +14,8 @@ app.use(cors({
     origin: function (origin, callback) {
         if (
             !origin ||
-            /^http:\/\/localhost:\d+$/.test(origin)
+            /^http:\/\/localhost:\d+$/.test(origin) ||
+            origin === "https://prepinterviewhelp.netlify.app"
         ) {
             callback(null, true);
         } else {
