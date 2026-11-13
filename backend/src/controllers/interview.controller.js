@@ -1,4 +1,5 @@
 
+const { CanvasFactory } = require("pdf-parse/worker");
 const { PDFParse } = require("pdf-parse");
 const interviewReportModel = require("../models/interviewReport.model");
 
@@ -17,8 +18,9 @@ async function generateInterviewReportController(req, res) {
         }
 
         const parser = new PDFParse({
-            data: new Uint8Array(req.file.buffer)
-        });
+    data: new Uint8Array(req.file.buffer),
+    CanvasFactory
+});
 
         let resumeContent;
 
