@@ -1,10 +1,9 @@
 import axios from "axios"
 
-
 const api = axios.create({
-    baseURL: "http://localhost:3000",
-    withCredentials: true
-})
+  baseURL: "https://genai-project-5-b3wp.onrender.com",
+  withCredentials: true
+});
 
 export async function register({ username, email, password }) {
 
